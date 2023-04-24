@@ -36,6 +36,7 @@
 #include "sweep.h"
 
 #include <gsl/span>
+#include <memory>
 
 #include "../common/dll_symbol.h"
 
@@ -57,11 +58,8 @@ public:
    * @param polyline
    */
   explicit CDT(gsl::span<Point> polyline);
-
-   /**
-   * Destructor - clean up memory
-   */
-  ~CDT();
+  CDT(CDT&&) = default;
+  CDT& operator=(CDT&&) = default;
 
   /**
    * Add a hole
@@ -98,8 +96,8 @@ public:
    * Internals
    */
 
-  SweepContext* sweep_context_;
-  Sweep* sweep_;
+  std::unique_ptr<SweepContext> sweep_context_;
+  std::unique_ptr<Sweep> sweep_;
 
 };
 

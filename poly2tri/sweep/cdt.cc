@@ -34,8 +34,8 @@ namespace p2t {
 
 CDT::CDT(gsl::span<Point> polyline)
 {
-  sweep_context_ = new SweepContext(polyline);
-  sweep_ = new Sweep;
+  sweep_context_ = std::make_unique<SweepContext>(polyline);
+  sweep_ = std::make_unique<Sweep>();
 }
 
 void CDT::AddHole(gsl::span<Point> polyline)
@@ -60,12 +60,6 @@ const std::vector<p2t::Triangle*>& CDT::GetTriangles() const
 const std::list<p2t::Triangle*>& CDT::GetMap() const
 {
   return sweep_context_->GetMap();
-}
-
-CDT::~CDT()
-{
-  delete sweep_context_;
-  delete sweep_;
 }
 
 } // namespace p2t
