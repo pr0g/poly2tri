@@ -80,8 +80,6 @@ void AddToMap(Triangle* triangle);
 
 Point* GetPoint(size_t index);
 
-Point* GetPoints();
-
 void RemoveFromMap(Triangle* triangle);
 
 void AddHole(gsl::span<Point> polyline);
