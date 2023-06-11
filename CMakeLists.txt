@@ -7,8 +7,8 @@ include(GNUInstallDirs)
 include(FetchContent)
 FetchContent_Declare(
   gsl
-  GIT_REPOSITORY https://github.com/pr0g/GSL.git
-  GIT_TAG 77882a415a7050b51b46ff5f70668234091bbdba)
+  GIT_REPOSITORY https://github.com/microsoft/GSL.git
+  GIT_TAG 303d964a241cb2f2a058fe0baa14013eb9afa116)
 set(GSL_INSTALL ON)
 FetchContent_MakeAvailable(gsl)
 
