@@ -1,3 +1,3 @@
 include(CMakeFindDependencyMacro)
-find_dependency(Microsoft.GSLConfig)
+find_dependency(Microsoft.GSL)
 include(${CMAKE_CURRENT_LIST_DIR}/poly2tri-targets.cmake)

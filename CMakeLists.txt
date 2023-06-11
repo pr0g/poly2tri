@@ -28,7 +28,7 @@ target_sources(
 target_include_directories(
   poly2tri PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
                   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-target_link_libraries(poly2tri PUBLIC Microsoft.GSL::GSL)
+target_link_libraries(poly2tri PUBLIC GSL)
 target_compile_features(poly2tri PUBLIC cxx_std_17)
 
 set_target_properties(poly2tri PROPERTIES DEBUG_POSTFIX "d")
@@ -55,7 +55,7 @@ install(
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/poly2tri
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/poly2tri)
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 install(
   EXPORT poly2tri-config
